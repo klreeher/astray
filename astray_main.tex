@@ -1,0 +1,33 @@
+\documentclass[a5paper,14pt,oneside,onecolumn,openright,showtrim]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{subfiles}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+% see memoir docs for deets -- https://mirror2.sandyriver.net/pub/ctan/macros/latex/contrib/memoir/memman.pdf
+% stock = the size of paper will be printed on
+% trimmed = what the paper will be trimmed down to
+%\medievalpage
+%\stockletter
+%\settrimmedsize{8in}{5in}{*}
+
+\OnehalfSpacing 
+
+\title{Astray}
+\author{Sleeps With Coyotes}
+\date{}
+
+\begin{document}
+\frontmatter
+\tableofcontents
+
+\mainmatter
+\pagestyle{simple}
+\chapterstyle{dowding}
+
+
+\backmatter
+\end{document}
