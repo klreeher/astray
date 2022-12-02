@@ -1,4 +1,4 @@
-\documentclass[a5paper,12pt,oneside,onecolumn,openright,showtrim]{memoir}
+\documentclass[halfletter,14pt,oneside,onecolumn,openleft]{memoir}
 
 %--------------------------------------------------------------------------
 %
@@ -18,9 +18,14 @@
 
 %% FONTS FONTS 
 
-\usepackage{tgbonum}
+\usepackage{CrimsonPro}
 \usepackage[T1]{fontenc}
-\usepackage{aesupp}
+%% The font package uses mweights.sty which has som issues with the
+%% \normalfont command. The following two lines fixes this issue.
+\let\oldnormalfont\normalfont
+\def\normalfont{\oldnormalfont\mdseries}
+
+
 %--------------------------------------------------------------------------
 %
 % PAGE LAYOUT
@@ -31,47 +36,42 @@
 %\stockletter
 %\settrimmedsize{8in}{5in}{*}
 
+\pagestyle{plain}
+
 % TITLE PAGE
 
-\title{Astray}
+\title{To The Legion Of The Lost Ones}
 \author{Sleeps With Coyotes}
 \date{}
 
+\newcommand*{\titleAAT}{\begingroup An Approach to Type
+\FSfont{5bd}% FontSite Bodoni
+\drop=0.1\textwidth
+\vspace*{0.5\drop}
+{\huge THE AUTHOR}
+
+\begin{vplace}[2]
+\begin{raggedleft}
+\LARGE AN APPROACH TO\\[0.2\baselineskip]
+{\FSfont{5cd}% FontSite Clarendon
+  \HUGE\texthb{Conundrums}}\par
+\end{raggedleft}
+\end{vplace}
+
+\large{THE PUBLISHER}
+\vspace*{0.5\drop}
+
 
 \begin{document}
-
-% PAGE STYLING
-
-\OnehalfSpacing 
-\pagestyle{plain}
-%\pagestyle{showlocs}
-
-
 \frontmatter
 \begin{titlingpage}
-
-\setlength{\droptitle}{80pt}
-\maketitle
+\titleAAT
 \end{titlingpage}
-\tableofcontents
-
+\cleardoublepage
+\cleardoublepage
 \mainmatter
 
-
-\part{To The Legion Of The Lost Ones}
 \subfile{contents/astray/01_ToTheLegionOfTheLostOnes}
-
-\part{More Than Kin}
-\subfile{contents/astray/02_MoreThanKin}
-
-\part{ An Alien Turf}
-\subfile{contents/astray/03_AnAlienTurf}
-
-\part{ The Crime}
-\subfile{contents/astray/04_TheCrime}
-
-\part{Brethren In Their Sorrow}
-\subfile{contents/astray/05_InTheirSorrow}
 
 
 \backmatter
