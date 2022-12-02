@@ -8,6 +8,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage[svgnames]{xcolor}
 \usepackage{pifont}
 \graphicspath{{images/}}
 \usepackage{subfiles}
@@ -43,10 +44,45 @@
 \title{To The Legion Of The Lost Ones}
 \author{Sleeps With Coyotes}
 \date{}
+\newcommand*{\plogo}{\fbox{$\mathcal{PL}$}} % Generic dummy publisher logo
 
 \begin{document}
 \frontmatter
 \begin{titlingpage}
+ % Suppresses headers and footers on the title page
+
+  \raggedleft % Right align everything
+  
+  \vspace*{\baselineskip} % Whitespace at the top of the page
+  
+  %------------------------------------------------
+  % Author
+  %------------------------------------------------
+  
+  {\Large Sleeps With Coyotes} % Author name
+  
+  \vspace*{0.167\textheight} % Whitespace before the title
+  
+  %------------------------------------------------
+  % Title and subtitle
+  %------------------------------------------------
+  
+  \textbf{\LARGE To The Legion}\\[\baselineskip] % First title line
+  
+  \textbf{\LARGE ~Of The Lost Ones}\\[\baselineskip] % Main title line which draws the focus of the reader
+  
+  {\Large \textit{Astray}} % Subtitle
+  
+  \vfill % Whitespace between the titles and the publisher
+  
+  %------------------------------------------------
+  % Publisher
+  %------------------------------------------------
+  
+  {\large The Publisher~~\plogo} % Publisher and logo
+  
+  \vspace*{3\baselineskip} % Whitespace at the bottom of the page
+
 
 \end{titlingpage}
 \cleardoublepage
