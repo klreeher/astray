@@ -23,7 +23,8 @@
 % FONTS FONTS 
 
 %\usepackage{tgbonum}
-\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+  \setmainfont{IM FELL Great Primer} %resp. your company's font
 
 %--------------------------------------------------------------------------
 %
@@ -108,9 +109,9 @@
 
 \makeevenhead{myheadings}%
 {\normalfont\thepage}{}{%
-\normalfont Astray}
+\normalfont\textit\rightmark}
 \makeoddhead{myheadings}%
-{\normalfont\rightmark}{}{%
+{}{}{%
 \normalfont\thepage}
 
 % fontispiece
@@ -162,28 +163,32 @@
 
 \mainmatter
 \cleartorecto
-\part[To The Legion Of The Lost Ones]{To The Legion Of The Lost Ones}
-\markboth{To The Legion Of The Lost Ones}{To The Legion Of The Lost Ones}
+\part{To The Legion Of The Lost Ones}
+\markright{To The Legion Of The Lost Ones}
 \subfile{contents/01_ToTheLegionOfTheLostOnes}
 \clearforchapter
 
 \cleartorecto
 \part{More Than Kin}
+\markright{More Than Kin}
 \subfile{contents/02_MoreThanKin}
 \clearforchapter
 
 \cleartorecto
 \part{An Alien Turf}
+\markright{An Alien Turf}
 \subfile{contents/03_AnAlienTurf}
 \clearforchapter
 
 \cleartorecto
 \part{The Crime}
+\markright{The Crime}
 \subfile{contents/04_TheCrime}
 \clearforchapter
 
 \cleartorecto
 \part{Brethren In Their Sorrow}
+\markright{Brethren In Their Sorrow}
 \subfile{contents/05_InTheirSorrow}
 \clearforchapter
 \backmatter
