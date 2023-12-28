@@ -1,2 +1,8 @@
 inputs/*
 output/*
+**.aux
+**.fdb
+**.fls
+**.log
+**.synctex.gz
+**.fdb_latexmk
