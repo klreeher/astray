@@ -1,4 +1,4 @@
-\documentclass[a5paper,12pt,twoside,onecolumn,openright,showtrim]{memoir}
+\documentclass[draft,a5paper,12pt,twoside,onecolumn,openright,showtrim]{memoir}
 
 %--------------------------------------------------------------------------
 %
@@ -11,6 +11,7 @@
 \usepackage{graphicx}
 \usepackage{pifont}
 \usepackage{datetime}
+\usepackage{bookmark}
 %\graphicspath{{images/}}
 \usepackage{subfiles}
 \ifLuaTeX
@@ -18,7 +19,8 @@
 \fi
 \usepackage[USenglish]{babel} % tells LaTeX what language you're using so it knows how to hyphenate words! % Automatically Change Quotes
 
-%% FONTS FONTS 
+
+% FONTS FONTS 
 
 %\usepackage{tgbonum}
 \usepackage[T1]{fontenc}
@@ -42,8 +44,8 @@
 %% font settings
 \renewcommand{\booknamefont}{\normalfont\huge\sffamily}
 \renewcommand{\booknumfont}{\normalfont\huge\sffamily}
-\renewcommand{\partnamefont}{\normalfont\large\sffamily}
-\renewcommand{\partnumfont}{\normalfont\large\sffamily}
+\renewcommand{\chapnamefont}{\normalfont\large\sffamily}
+\renewcommand{\chapnumfont}{\normalfont\large\sffamily}
 \makeatletter
 \renewcommand\memendofchapterhook{%
 \clearpage\m@mindentafterchapter\@afterheading}
@@ -69,18 +71,55 @@
 \noindent}
 
 
-% datetimes
-\newdate{vers1}{28}{12}{2023}
+\ifdraftdoc
+\makeevenfoot{plain}{}{\thepage}{\textit{Draft: \today}}
+\makeoddfoot{plain}{\textit{Draft: \today}}{\thepage}{}
+\makeevenfoot{headings}{}{}{\textit{Draft: \today}}
+\makeoddfoot{headings}{\textit{Draft: \today}}{}{}
+\fi
+
+
+
 
 \begin{document}
 
-% PAGE STYLING
-\frontmatter
-\OnehalfSpacing 
-\pagestyle{empty}
+\ifdraftdoc
+% special things for a draft document
+\else
+% perhaps special things for a non-draft document
+\fi
 
-%\pagestyle{showlocs}
+
+
+\OnehalfSpacing 
+\pagestyle{myheadings}
+
+\makepsmarks{myheadings}{%
+\nouppercaseheads
+\createmark{chapter}{both}{nonumber}{}{}
+\createmark{section}{right}{shownumber}{}{. \space}
+\createplainmark{toc}{both}{\contentsname}
+\createplainmark{lof}{both}{\listfigurename}
+\createplainmark{lot}{both}{\listtablename}
+\createplainmark{bib}{both}{\bibname}
+\createplainmark{index}{both}{\indexname}
+\createplainmark{glossary}{both}{\glossaryname}
+}
+
+\makeevenhead{myheadings}%
+{\normalfont\thepage}{}{%
+\normalfont Astray}
+\makeoddhead{myheadings}%
+{\normalfont\rightmark}{}{%
+\normalfont\thepage}
+
+% fontispiece
+\thispagestyle{empty}
 \cleartorecto
+\frontmatter
+
+\thispagestyle{empty}
+
 \begin{center}
 \setlength{\unitlength}{1mm} % measurements in millimeters
 \begin{picture}(80,160)(-10,-60) % define size of picture
@@ -89,6 +128,9 @@
 \setlength{\unitlength}{1pt} % reset measurements to default
 \end{center}
 
+%title page
+
+\thispagestyle{empty}
 
 \vspace*{\droptitle}
 {\Huge Astray}\\[\baselineskip]
@@ -101,20 +143,27 @@
 %\setlength{\droptitle}{80pt}
 %\maketitle
 
-\clearpage
+\cleartoverso
+
 %versions page
+
 \begin{center}
 \begin{minipage}{.8\textwidth} 
 \subfile{contents/version_history}
  \end{minipage} 
 
 \end{center}
+\clearpage
+% table of contents
+\subfile{contents/index}
 
 
+\clearforchapter
 
 \mainmatter
-\cleartoverso
-\part{To The Legion Of The Lost Ones}
+\cleartorecto
+\part[To The Legion Of The Lost Ones]{To The Legion Of The Lost Ones}
+\markboth{To The Legion Of The Lost Ones}{To The Legion Of The Lost Ones}
 \subfile{contents/01_ToTheLegionOfTheLostOnes}
 \clearforchapter
 
@@ -138,4 +187,11 @@
 \subfile{contents/05_InTheirSorrow}
 \clearforchapter
 \backmatter
+
+%about the author
+
+\cleartorecto
+\subfile{contents/about_author}
+\clearforchapter
+
 \end{document}
