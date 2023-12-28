@@ -1,4 +1,4 @@
-\documentclass[a5paper,12pt,oneside,onecolumn,openright,showtrim]{memoir}
+\documentclass[a5paper,12pt,twoside,onecolumn,openright,showtrim]{memoir}
 
 %--------------------------------------------------------------------------
 %
@@ -9,7 +9,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{pifont}
-\graphicspath{{images/}}
+%\graphicspath{{images/}}
 \usepackage{subfiles}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
@@ -18,9 +18,9 @@
 
 %% FONTS FONTS 
 
-\usepackage{tgbonum}
+%\usepackage{tgbonum}
 \usepackage[T1]{fontenc}
-\usepackage{aesupp}
+
 %--------------------------------------------------------------------------
 %
 % PAGE LAYOUT
@@ -37,42 +37,94 @@
 \author{Sleeps With Coyotes}
 \date{}
 
+%% font settings
+\renewcommand{\booknamefont}{\normalfont\huge\sffamily}
+\renewcommand{\booknumfont}{\normalfont\huge\sffamily}
+\renewcommand{\partnamefont}{\normalfont\large\sffamily}
+\renewcommand{\partnumfont}{\normalfont\large\sffamily}
+\makeatletter
+\renewcommand\memendofchapterhook{%
+\clearpage\m@mindentafterchapter\@afterheading}
+\makeatother
+
+\renewcommand*{\beforepartskip}{\null\vskip 0pt plus 0.3fil}
+\renewcommand*{\afterpartskip}{\vskip 0pt plus 0.7fil \newpage}
+
+\newcommand{\scenechange}{
+  \par
+  \vspace{\baselineskip}
+  \par
+\noindent}
+%Creates a line break for a change of scene
+
+\newcommand{\majorchange}{
+  \par
+  \vspace{\baselineskip}
+  \hfill
+  \textasteriskcentered
+  \hfill
+  \vspace{\baselineskip}
+\noindent}
 
 \begin{document}
 
 % PAGE STYLING
-
-\OnehalfSpacing 
-\pagestyle{plain}
-%\pagestyle{showlocs}
-
-
 \frontmatter
-\begin{titlingpage}
+\OnehalfSpacing 
+\pagestyle{empty}
 
-\setlength{\droptitle}{80pt}
-\maketitle
-\end{titlingpage}
-\tableofcontents
+%\pagestyle{showlocs}
+\cleartorecto
+\begin{center}
+\setlength{\unitlength}{1mm} % measurements in millimeters
+\begin{picture}(80,160)(-10,-60) % define size of picture
+\includegraphics[width=0.5\textwidth]{contents/images/HTC_Heritage Library_Keeper of Keys 02Element 4.png}
+\end{picture}
+\setlength{\unitlength}{1pt} % reset measurements to default
+\end{center}
+
+
+\vspace*{\droptitle}
+{\Huge Astray}\\[\baselineskip]
+{\large\itshape by Sleeps With Coyotes}\\[\baselineskip]
+\vfill
+\rule{0.4\textwidth}{0.4pt}\\[\baselineskip]
+{\large\itshape URSA}\par
+\vspace*{\droptitle}
+
+%\setlength{\droptitle}{80pt}
+%\maketitle
+
+
+
+
+\clearpage
+Copyright Info Goes Here
 
 \mainmatter
-
-
+\cleartorecto
 \part{To The Legion Of The Lost Ones}
-\subfile{contents/astray/01_ToTheLegionOfTheLostOnes}
+\subfile{contents/01_ToTheLegionOfTheLostOnes}
+\clearforchapter
 
+\cleartorecto
 \part{More Than Kin}
-\subfile{contents/astray/02_MoreThanKin}
+\subfile{contents/02_MoreThanKin}
+\clearforchapter
 
-\part{ An Alien Turf}
-\subfile{contents/astray/03_AnAlienTurf}
+\cleartorecto
+\part{An Alien Turf}
+\subfile{contents/03_AnAlienTurf}
+\clearforchapter
 
-\part{ The Crime}
-\subfile{contents/astray/04_TheCrime}
+\cleartorecto
+\part{The Crime}
+\subfile{contents/04_TheCrime}
+\clearforchapter
 
+\cleartorecto
 \part{Brethren In Their Sorrow}
-\subfile{contents/astray/05_InTheirSorrow}
-
-
+\subfile{contents/05_InTheirSorrow}
+\clearforchapter
 \backmatter
 \end{document}

@@ -1,0 +1,7 @@
+\babel@toc {USenglish}{}\relax 
+\contentsline {chapter}{Contents}{i}{}%
+\contentsline {part}{\partnumberline {I}To The Legion Of The Lost Ones}{1}{}%
+\contentsline {part}{\partnumberline {II}More Than Kin}{47}{}%
+\contentsline {part}{\partnumberline {III} An Alien Turf}{120}{}%
+\contentsline {part}{\partnumberline {IV} The Crime}{417}{}%
+\contentsline {part}{\partnumberline {V}Brethren In Their Sorrow}{867}{}%
