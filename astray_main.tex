@@ -10,15 +10,17 @@
 \usepackage{tcolorbox}
 \usepackage{graphicx}
 \usepackage{pifont}
-\usepackage{datetime}
+\usepackage{hyperref}
+\usepackage{datetime2}
 \usepackage{bookmark}
+%\usepackage{showframe}
 %\graphicspath{{images/}}
 \usepackage{subfiles}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[USenglish]{babel} % tells LaTeX what language you're using so it knows how to hyphenate words! % Automatically Change Quotes
-
+\DTMusemodule{USenglish}{en-US}
 
 % FONTS FONTS 
 
@@ -78,6 +80,7 @@
 \makeevenfoot{headings}{}{}{\textit{Draft: \today}}
 \makeoddfoot{headings}{\textit{Draft: \today}}{}{}
 \fi
+
 
 
 
@@ -163,35 +166,44 @@
 
 \mainmatter
 \cleartorecto
-\part{To The Legion Of The Lost Ones}
+\part*{To The Legion Of The Lost Ones}
 \markright{To The Legion Of The Lost Ones}
+\addcontentsline{toc}{part}{To The Legion Of The Lost Ones}
 \subfile{contents/01_ToTheLegionOfTheLostOnes}
 \clearforchapter
 
 \cleartorecto
-\part{More Than Kin}
+\part*{More Than Kin}
 \markright{More Than Kin}
+\addcontentsline{toc}{part}{More Than Kin}
 \subfile{contents/02_MoreThanKin}
 \clearforchapter
 
 \cleartorecto
-\part{An Alien Turf}
+\part*{An Alien Turf}
 \markright{An Alien Turf}
+\addcontentsline{toc}{part}{An Alien Turf}
 \subfile{contents/03_AnAlienTurf}
 \clearforchapter
 
 \cleartorecto
-\part{The Crime}
+\part*{The Crime}
 \markright{The Crime}
+\addcontentsline{toc}{part}{The Crime}
 \subfile{contents/04_TheCrime}
 \clearforchapter
 
 \cleartorecto
-\part{Brethren In Their Sorrow}
+\part*{Brethren In Their Sorrow}
 \markright{Brethren In Their Sorrow}
+\addcontentsline{toc}{part}{Brethren In Their Sorrow}
 \subfile{contents/05_InTheirSorrow}
 \clearforchapter
+
 \backmatter
+\renewcommand{\thepage}{\roman{page}}% 
+\setcounter{page}{1}% Start page number with 2
+\pagestyle{titlingpage}
 
 %about the author
 

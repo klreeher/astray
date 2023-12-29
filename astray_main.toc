@@ -1,6 +1,6 @@
 \babel@toc {USenglish}{}\relax 
-\contentsline {part}{\partnumberline {I}To The Legion Of The Lost Ones}{1}{part.1}%
-\contentsline {part}{\partnumberline {II}More Than Kin}{13}{part.2}%
-\contentsline {part}{\partnumberline {III}An Alien Turf}{31}{part.3}%
-\contentsline {part}{\partnumberline {IV}The Crime}{95}{part.4}%
-\contentsline {part}{\partnumberline {V}Brethren In Their Sorrow}{189}{part.5}%
+\contentsline {part}{To The Legion Of The Lost Ones}{3}{section*.3}%
+\contentsline {part}{More Than Kin}{15}{section*.5}%
+\contentsline {part}{An Alien Turf}{33}{section*.7}%
+\contentsline {part}{The Crime}{97}{section*.9}%
+\contentsline {part}{Brethren In Their Sorrow}{191}{section*.11}%
