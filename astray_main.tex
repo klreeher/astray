@@ -1,4 +1,4 @@
-\documentclass[draft,a5paper,12pt,twoside,onecolumn,openright,showtrim]{memoir}
+\documentclass[a5paper,12pt,twoside,onecolumn,openright,showtrim]{memoir}
 
 %--------------------------------------------------------------------------
 %
@@ -36,10 +36,12 @@
 %
 %--------------------------------------------------------------------------
 
-\medievalpage
+%\medievalpage
 %\stockletter
 %\settrimmedsize{8in}{5in}{*}
+%\stockletter
 
+\checkandfixthelayout
 % TITLE PAGE
 
 \title{Astray}
@@ -70,7 +72,8 @@
   \par
   \vspace{\baselineskip}
   \hfill
-  \textasteriskcentered
+  \pgfornament[scale=.15]{79}
+  %\textasteriskcentered
   \hfill
   \vspace{\baselineskip}
 \noindent}
@@ -195,6 +198,7 @@
 \addcontentsline{toc}{part}{Brethren In Their Sorrow}
 \subfile{contents/05_InTheirSorrow}
 \clearforchapter
+\cleardoublepage
 
 \backmatter
 \renewcommand{\thepage}{\roman{page}}% 
@@ -204,8 +208,8 @@
 %about the author
 
 \cleartorecto
+
 \subfile{contents/about_author}
 \clearforchapter
-
 
 \end{document}
