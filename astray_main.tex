@@ -20,6 +20,7 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[USenglish]{babel} % tells LaTeX what language you're using so it knows how to hyphenate words! % Automatically Change Quotes
+
 \DTMusemodule{USenglish}{en-US}
 
 % FONTS FONTS 
@@ -83,20 +84,8 @@
 
 
 
-
-
-\begin{document}
-
-\ifdraftdoc
-% special things for a draft document
-\else
-% perhaps special things for a non-draft document
-\fi
-
-
-
 \OnehalfSpacing 
-\pagestyle{myheadings}
+
 
 \makepsmarks{myheadings}{%
 \nouppercaseheads
@@ -117,24 +106,24 @@
 {}{}{%
 \normalfont\thepage}
 
+
+\begin{document}
+
+
 % fontispiece
-\thispagestyle{empty}
+\pagestyle{empty}
 \cleartorecto
 \frontmatter
-
-\thispagestyle{empty}
 
 \begin{center}
 \setlength{\unitlength}{1mm} % measurements in millimeters
 \begin{picture}(80,160)(-10,-60) % define size of picture
-\includegraphics[width=0.5\textwidth]{contents/images/HTC_Heritage Library_Keeper of Keys 02Element 4.png}
+\includegraphics[draft=false,width=0.5\textwidth]{contents/images/HTC_Heritage Library_Keeper of Keys 02Element 4.png}
 \end{picture}
 \setlength{\unitlength}{1pt} % reset measurements to default
 \end{center}
 
 %title page
-
-\thispagestyle{empty}
 
 \vspace*{\droptitle}
 {\Huge Astray}\\[\baselineskip]
@@ -165,6 +154,7 @@
 \clearforchapter
 
 \mainmatter
+\pagestyle{myheadings}
 \cleartorecto
 \part*{To The Legion Of The Lost Ones}
 \markright{To The Legion Of The Lost Ones}
