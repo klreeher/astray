@@ -7,12 +7,12 @@
 %--------------------------------------------------------------------------
 
 \usepackage[utf8]{inputenc}
-\usepackage{tcolorbox}
 \usepackage{graphicx}
-\usepackage{pifont}
 \usepackage{hyperref}
 \usepackage{datetime2}
 \usepackage{bookmark}
+\usepackage{pgfornament}
+\usepackage{tikz}
 %\usepackage{showframe}
 %\graphicspath{{images/}}
 \usepackage{subfiles}
@@ -24,7 +24,8 @@
 \DTMusemodule{USenglish}{en-US}
 
 % FONTS FONTS 
-
+\usetikzlibrary{calc}
+\usetikzlibrary{fit}
 %\usepackage{tgbonum}
 \usepackage{fontspec}
   \setmainfont{IM FELL Great Primer} %resp. your company's font
@@ -111,6 +112,7 @@
 
 
 % fontispiece
+
 \pagestyle{empty}
 \cleartorecto
 \frontmatter
@@ -118,7 +120,7 @@
 \begin{center}
 \setlength{\unitlength}{1mm} % measurements in millimeters
 \begin{picture}(80,160)(-10,-60) % define size of picture
-\includegraphics[draft=false,width=0.5\textwidth]{contents/images/HTC_Heritage Library_Keeper of Keys 02Element 4.png}
+\includegraphics[draft=false,width=0.5\textwidth]{contents/images/HTCHeritageLibraryKeeperofKeys02Element4}
 \end{picture}
 \setlength{\unitlength}{1pt} % reset measurements to default
 \end{center}
@@ -129,29 +131,33 @@
 {\Huge Astray}\\[\baselineskip]
 {\large\itshape by Sleeps With Coyotes}\\[\baselineskip]
 \vfill
-\rule{0.4\textwidth}{0.4pt}\\[\baselineskip]
-{\large\itshape URSA}\par
+\par
+\begin{picture}(40,80)(-.7\textwidth,20) % define size of picture
+\includegraphics[draft=false,width=0.25\textwidth]{contents/images/bear-side-view-silhouette.png}
+\end{picture}
 \vspace*{\droptitle}
-
 %\setlength{\droptitle}{80pt}
 %\maketitle
 
-\cleartoverso
+\cleartorecto
 
 %versions page
 
 \begin{center}
-\begin{minipage}{.8\textwidth} 
+\vfill
+\begin{minipage}[t][][b]{.8\textwidth} 
+\vspace{0pt}
 \subfile{contents/version_history}
  \end{minipage} 
 
 \end{center}
-\clearpage
+\cleartorecto
 % table of contents
 \subfile{contents/index}
 
+\clearpage
+\cleartorecto
 
-\clearforchapter
 
 \mainmatter
 \pagestyle{myheadings}
@@ -200,5 +206,6 @@
 \cleartorecto
 \subfile{contents/about_author}
 \clearforchapter
+
 
 \end{document}
