@@ -2,5 +2,5 @@
 \contentsline {part}{To The Legion Of The Lost Ones}{3}{section*.3}%
 \contentsline {part}{More Than Kin}{17}{section*.5}%
 \contentsline {part}{An Alien Turf}{37}{section*.7}%
-\contentsline {part}{The Crime}{107}{section*.9}%
-\contentsline {part}{Brethren In Their Sorrow}{213}{section*.11}%
+\contentsline {part}{The Crime}{109}{section*.9}%
+\contentsline {part}{Brethren In Their Sorrow}{215}{section*.11}%

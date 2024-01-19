@@ -1,4 +1,4 @@
-\documentclass[a5paper,12pt,twoside,onecolumn,openright,showtrim]{memoir}
+\documentclass[a5paper,12pt,twoside,onecolumn,openright,showtrim,draft]{memoir}
 
 %--------------------------------------------------------------------------
 %
@@ -44,9 +44,7 @@
 \checkandfixthelayout
 % TITLE PAGE
 
-\title{Astray}
-\author{Sleeps With Coyotes}
-\date{}
+
 
 %% font settings
 \renewcommand{\booknamefont}{\normalfont\huge\sffamily}
@@ -110,52 +108,95 @@
 {}{}{%
 \normalfont\thepage}
 
+\newcommand{\published}[1]{%
+\gdef\puB{#1}}
+\newcommand{\puB}{}
+\renewcommand{\maketitlehooka}{%
+\par\noindent \puB}
+
+\title{Astray}
+\author{Sleeps With Coyotes}
+\date{}
+%\published{madecunningly}
+
 
 \begin{document}
 
+\frontmatter
+\cleartorecto
+% half title & verso
+\thispagestyle{empty}
+\begin{center}
+\begin{vplace}
+\Large{\thetitle}
+\end{vplace}
+\end{center}
+\clearpage
 
 % fontispiece
-
-\pagestyle{empty}
-\cleartorecto
-\frontmatter
-
+\thispagestyle{empty}
 \begin{center}
-\setlength{\unitlength}{1mm} % measurements in millimeters
-\begin{picture}(80,160)(-10,-60) % define size of picture
-\includegraphics[draft=false,width=0.5\textwidth]{contents/images/HTCHeritageLibraryKeeperofKeys02Element4}
-\end{picture}
-\setlength{\unitlength}{1pt} % reset measurements to default
+\begin{vplace}
+\includegraphics[draft=false,width=0.8\textwidth]{contents/images/HTCHeritageLibraryKeeperofKeys02Element4}
+\end{vplace}
 \end{center}
 
 %title page
-
-\vspace*{\droptitle}
-{\Huge Astray}\\[\baselineskip]
-{\large\itshape by Sleeps With Coyotes}\\[\baselineskip]
-\vfill
-\par
-\begin{picture}(40,80)(-.7\textwidth,20) % define size of picture
-\includegraphics[draft=false,width=0.25\textwidth]{contents/images/bear-side-view-silhouette.png}
-\end{picture}
-\vspace*{\droptitle}
-%\setlength{\droptitle}{80pt}
-%\maketitle
-
 \cleartorecto
 
-%versions page
+\maketitle
+\thispagestyle{empty}
+%sources
 
-\begin{center}
-\vfill
-\begin{minipage}[t][][b]{.8\textwidth} 
-\vspace{0pt}
-\subfile{contents/version_history}
- \end{minipage} 
+\clearpage
+\thispagestyle{plain}
+\begin{flushleft}
+\begin{SingleSpace} 
+\small{
+Text taken from\\ \url{https://uss-spambot.dreamwidth.org/}
 
-\end{center}
-\cleartorecto
+\pfbreak
+
+\textit{To The Legion Of The Lost Ones} posted \DTMdate{2010-02-03}
+
+\textit{More Than Kin} posted \DTMdate{2010-02-04}
+
+\textit{An Alien Turf} posted \DTMdate{2010-02-08}
+
+\textit{The Crime} posted \DTMdate{2010-08-31}
+
+\textit{Brethren In Their Sorrows} posted \DTMdate{2010-03-27} 
+
+\pfbreak
+
+\textit{Astray} was typeset and bound by \emph{madecunningly}. 
+The font used is \textit{IM FELL Great Primer}, which can be found at:\\ \url{https://fonts.google.com/specimen/IM+Fell+Great+Primer}
+}
+\end{SingleSpace}
+\end{flushleft}
+\clearpage
+% copyright page
+\thispagestyle{plain}
+\begin{SingleSpace}
+\begin{midsloppypar}
+\textit{Astray} is a series of short stories written in the Kingdom Hearts/Final Fantasy VII universe, with occasional dips into Vagrant Story and others. 
+
+Technically, \textit{Astray} is an alternate universe of another series, Sleeps 
+With Coyotes' \textit{Mirrorverse}. The \textit{Mirrorverse} series establishes more fully how Sephiroth and Riku met, over the course of Kingdom Hearts.  
+
+\pfbreak
+
+\textit{Sleeps With Coyotes} is a prolific fanfic author of many years. The main way to find their work is at 
+
+\url{https://archiveofourown.org/users/SleepsWithCoyotes/profile}
+\end{midsloppypar}
+\end{SingleSpace}
+
+
+
 % table of contents
+\cleartorecto
+\thispagestyle{plain}
 \subfile{contents/index}
 
 \clearpage
@@ -201,15 +242,6 @@
 \cleardoublepage
 
 \backmatter
-\renewcommand{\thepage}{\roman{page}}% 
-\setcounter{page}{1}% Start page number with 2
-\pagestyle{titlingpage}
 
-%about the author
-
-\cleartorecto
-
-\subfile{contents/about_author}
-\clearforchapter
 
 \end{document}
