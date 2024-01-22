@@ -29,8 +29,12 @@
 \usetikzlibrary{fit}
 %\usepackage{tgbonum}
 \usepackage{fontspec}
-  \setmainfont{IM FELL Great Primer} %resp. your company's font
-
+\setmainfont{IMFellGreatPrimer}[
+    Path=./IMFellGreatPrimer/,
+    Extension = .ttf,
+    UprightFont=*-Regular,
+    ItalicFont=*-Italic,
+ ]
 %--------------------------------------------------------------------------
 %
 % PAGE LAYOUT
